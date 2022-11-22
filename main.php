@@ -16,8 +16,16 @@ if($h >= 8 ){
 echo "<br>";
 file_put_contents("file.txt", "$time,\n", FILE_APPEND);
 $log = file_get_contents("file.txt");
-$replace = str_replace(",", "\n", $log);
-echo $replace;
+
+$data = explode(',', $log);
+
+foreach ($data as $i => $value) {
+    echo "<li> $value </li>";
+}
+
+
+// $replace = str_replace("," , "\n", $log);
+// echo $replace;
 
 ?>
 
